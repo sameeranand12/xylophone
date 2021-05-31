@@ -13,7 +13,7 @@ class XylophoneApp extends StatelessWidget {
           title: Center(child: Text('Lets Play')),
         ),
         body: SafeArea(
-          child: Container(),
+          child: Center(child: Text(nouns.first)),
         ),
       ),
     );
