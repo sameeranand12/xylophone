@@ -5,9 +5,14 @@ import 'package:flutter/widgets.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  //bool _isPlaying = false;
   void playSound(int noteNumber) {
     final player = AudioCache();
     player.play('note$noteNumber.wav');
+  }
+  void pauseSound(int noteNumber){
+    final player = AudioCache();
+    player.pause('note$noteNumber.wav');
   }
 
   @override
@@ -29,8 +34,8 @@ class XylophoneApp extends StatelessWidget {
                   color: Colors.red,
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {
 
+                    onPressed: () {
                       playSound(1);
                     },
 
