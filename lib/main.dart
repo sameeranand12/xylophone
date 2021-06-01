@@ -7,7 +7,7 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-
+debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.grey,
         appBar: AppBar(
@@ -15,9 +15,20 @@ class XylophoneApp extends StatelessWidget {
           title: Center(child: Text('Lets Play')),
         ),
         body: SafeArea(
-          child: Container(),
+          child: Center(
+            child: Container(
+              color: Colors.teal,
+              child: TextButton(onPressed: (){
+                final player = AudioCache();
+                player.play('note1.wav');
+              },
+                child: Text('Press me'),
+              ),
+            ),
+          ),
+
         ),
       ),
     );
   }
-}//sca
+}
