@@ -10,9 +10,23 @@ class XylophoneApp extends StatelessWidget {
     final player = AudioCache();
     player.play('note$noteNumber.wav');
   }
-  void pauseSound(int noteNumber){
+
+  void pauseSound(int noteNumber) {
     final player = AudioCache();
-    player.pause('note$noteNumber.wav');
+    player.play('note$noteNumber.wav');
+  }
+  Expanded keyNotes(Color colorName,  int noteNum){
+    Expanded(
+        child: Container(
+        color: colorName,
+
+        child: TextButton(
+        onPressed: () {
+      playSound(noteNum);
+    },
+    ),
+    ),
+    );
   }
 
   @override
@@ -27,93 +41,15 @@ class XylophoneApp extends StatelessWidget {
         ),
         body: SafeArea(
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: Container(
-                  color: Colors.red,
-                  width: double.infinity,
-                  child: TextButton(
-
-                    onPressed: () {
-                      playSound(1);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.orangeAccent,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(2);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.yellow,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(3);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.lightGreen,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(4);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.lightBlueAccent,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(5);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.deepPurple,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(6);
-                    },
-
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.purple[200],
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(7);
-                    },
-
-                  ),
-                ),
-              ),
+              keyNotes(Colors.red , 1),
+              keyNotes(Colors.orange, 2),
+              keyNotes(Colors.pink , 3),
+              keyNotes(Colors.yellow , 4),
+              keyNotes(Colors.lightGreen , 5),
+              keyNotes(Colors.lightBlueAccent , 6),
+              keyNotes(Colors.purpleAccent , 7),
             ],
           ),
         ),
