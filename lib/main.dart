@@ -25,7 +25,7 @@ class XylophoneApp extends StatelessWidget {
       playSound(noteNum);
     },
     ),
-    ),
+    ),//just for git
     );
   }
 
@@ -37,7 +37,7 @@ class XylophoneApp extends StatelessWidget {
         backgroundColor: Colors.grey,
         appBar: AppBar(
           backgroundColor: Colors.black87,
-          title: Center(child: Text('Lets Play')),
+          title: Center(child: Text('Touch to Play')),
         ),
         body: SafeArea(
           child: Column(
